@@ -1,7 +1,7 @@
 <h1 align="center"> Sorting algorithms & Big O </h1>
 <img src="https://i.imgur.com/U1znfuf.png" width=100%>
 
-### Foundations > Low-level programming & Algorithm > Data structures and Algorithms
+#### Foundations > Low-level programming & Algorithm > Data structures and Algorithms
 
 ## Introduction
 
