@@ -11,54 +11,53 @@
 
 void insertion_sort_list(listint_t **list)
 {
-    listint_t *h = NULL, *h2 = NULL, *tmp1 = NULL, *tmp2 = NULL;
+	listint_t *h = NULL, *h2 = NULL, *tmp1 = NULL, *tmp2 = NULL;
 
-    h = *list;
+	h = *list;
 
-    while(h->next)
-    {
-        h2 = h;
-        if (h->next->n < h->n)
-        {
-            tmp1 = h;
-            if(h2->next)
-                    tmp2 = h2->next;
-                
-            if(tmp1->prev)
-                tmp1->prev->next = tmp2;
-            if(tmp2->next)
-                tmp2->next->prev = tmp1;
-            
-            tmp2->prev = tmp1->prev;
-            tmp1->next = tmp2->next;
-            
-            tmp1->prev = tmp2;
-            tmp2->next = tmp1;
+	while(h->next)
+	{
+		h2 = h;
+		if (h->next->n < h->n)
+		{
+			tmp1 = h;
+			if(h->next)
+				tmp2 = h->next;
+			
+			if(tmp1->prev)
+				tmp1->prev->next = tmp2;
+			if(tmp2->next)
+				tmp2->next->prev = tmp1;
+			
+			tmp2->prev = tmp1->prev;
+			tmp1->next = tmp2->next;
+			
+			tmp1->prev = tmp2;
+			tmp2->next = tmp1;
 
+			while(h2->prev && h2->prev->n > h2->n)
+			{
+				tmp1 = h2;
+				
+				if(h2->next)
+					tmp2 = h2->next;
+				
+				if(tmp1->prev)
+					tmp1->prev->next = tmp2;
+				if(tmp2->next)
+					tmp2->next->prev = tmp1;
+				
+				tmp2->prev = tmp1->prev;
+				tmp1->next = tmp2->next;
+				
+				tmp1->prev = tmp2;
+				tmp2->next = tmp1;
 
-            while(h2->prev && h2->prev->n > h2->n)
-            {
-                tmp1 = h2;
-                 
-                if(h2->next)
-                    tmp2 = h2->next;
-                
-                if(tmp1->prev)
-                    tmp1->prev->next = tmp2;
-                if(tmp2->next)
-                    tmp2->next->prev = tmp1;
-                
-                tmp2->prev = tmp1->prev;
-                tmp1->next = tmp2->next;
-                
-                tmp1->prev = tmp2;
-                tmp2->next = tmp1;
-
-                h2 = h2->prev;
-            }
-        }
-        h = h->next;
-    }
+				h2 = h2->prev;
+			}
+		}
+	h = h->next;
+	}
 }
 
 
