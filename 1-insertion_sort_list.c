@@ -13,7 +13,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *h2 = NULL, *tmp1 = NULL, *tmp2 = NULL;
 	listint_t *h = *list;
 
-	while(h->next)
+	while(h)
 	{
 		h2 = h;
 		if (h->next->n < h->n)
@@ -62,7 +62,8 @@ void insertion_sort_list(listint_t **list)
 				h2 = h2->prev;
 			}
 		}
-	h = h->next;
+	if(h->next)
+		h = h->next;
 	}
 }
 
