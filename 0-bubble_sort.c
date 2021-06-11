@@ -22,7 +22,8 @@ void bubble_sort(int *array, size_t size)
          * it will be always the gratest value in a bubble of two
          * 
          * When the the loop gets two the end condition i will increment
-         * and now the end of the loop will be the previouse end - 1.
+         * and now the end of the loop will be the previous end - 1.
+         * Now the last position will be occupied by the gratest number
          */
         for (j = 0; j < ((size - i) - 1); j++)
         {
