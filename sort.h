@@ -23,8 +23,9 @@
  */
 typedef struct listint_s
 {
-  int n;
-  struct listint_s *prev;
+  const int n;
+  struct list
+                int_s *prev;
   struct listint_s *next;
 
 } listint_t;

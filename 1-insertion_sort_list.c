@@ -11,24 +11,27 @@
 
 void insertion_sort_list(listint_t **list)
 {
-    listint_t *h = *list, *h2 = NULL;
-    int tmp, tmp2;
+    listint_t *h = *list, *h2 = NULL, *tmp1 = NULL, *tmp2 = NULL;
 
     while(h->next)
     {
         h2 = h;
         if (h->next->n < h->n)
         {
-            tmp = h->n;
-            h->n = h->next->n;
-            h->next->n = tmp;
+            tmp1 = h;
+            tmp1->next = tmp1->next->next;
+            tmp1->next->prev = tmp1->prev;
+            tmp1->next->next = tmp1;
+            tmp1->prev = tmp1->next;
 
             while(h2->prev && h2->prev->n > h2->n)
             {
-                tmp2 = h2->n;
-                h2->n = h2->prev->n;
-                h2->prev->n = tmp2;
-                /* move to the previous position in the list */
+                tmp2 = h2;
+                tmp2->next = tmp2->next->next;
+                tmp2->next->prev = tmp2->prev;
+                tmp2->next->next = tmp2;
+                tmp2->prev = tmp2->next;
+
                 h2 = h2->prev;
             }
         }
