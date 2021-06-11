@@ -15,6 +15,7 @@ void insertion_sort_list(listint_t **list)
 
 	while(h)
 	{
+		printf("entro 1");
 		h2 = h;
 		if (h->next->n < h->n)
 		{
