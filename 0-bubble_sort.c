@@ -3,7 +3,7 @@
 #include "sort.h"
 
 /**
- * bubble-sort - this is the Bubble sort algorithm implementation in C
+ * bubble_sort - this is the Bubble sort algorithm implementation in C
  * @array: array of ints
  * @size: size of array
  * Return: no-return (void function)
@@ -30,12 +30,13 @@ void bubble_sort(int *array, size_t size)
 		for (j = 0; j < ((size - i) - 1); j++)
 		{
 			/**
-			* if the second in the pair is grater than
-			* the first --> swap
-			*/
+			 * if the second in the pair is grater than
+			 * the first --> swap
+			 */
 			if (array[j] > array[j + 1])
 			{
-				/** swap the values, now the second position
+				/**
+				 * swap the values, now the second position
 				 * in the window is the gratest of the two
 				 */
 
