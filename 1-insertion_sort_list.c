@@ -11,7 +11,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *h2 = NULL, *tmp1 = NULL, *tmp2 = NULL;
 	listint_t *h = *list;
 	
-	write("entro 1\n", 8);
+	write(2, "entro 1\n", 8);
 
 	while(h)
 	{
