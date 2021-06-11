@@ -4,16 +4,15 @@
 
 /**
  * insertion_sort_list - this is the Bubble sort algorithm implementation in C
- * @array: array of ints
- * @size: size of array
+ * @list: array of ints
  * Return: no-return (void function)
  */
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *h = NULL, *h2 = NULL, *tmp1 = NULL, *tmp2 = NULL;
+	listint_t *h2 = NULL, *tmp1 = NULL, *tmp2 = NULL;
 
-	h = *list;
+	listint_t *h = **list;
 
 	while(h->next)
 	{
