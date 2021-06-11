@@ -8,11 +8,11 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	printf("entro 0");
 	listint_t *h2 = NULL, *tmp1 = NULL, *tmp2 = NULL;
-	listint_t *h = (*list)->next;
+	listint_t *h = *list;
+	
+	write("entro 1\n", 8);
 
-	printf("entro 1");
 	while(h)
 	{
 		h2 = h;
