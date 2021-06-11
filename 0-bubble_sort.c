@@ -11,7 +11,7 @@
 void bubble_sort(int *array, size_t size)
 {
     size_t i = 0, j = 0;
-    int *tmp;
+    int tmp;
 
     /* loop over the array size times */
     for (i = 0; i < size; i++)
@@ -29,12 +29,13 @@ void bubble_sort(int *array, size_t size)
         for (j = 0; j < ((size - i) - 1); j++)
         {
             /* if the second in the pair is grater than the first --> swap */
-            if ( array[j] > array[j + 1])
+            if (array[j] > array[j + 1])
             {
                 /* swap the values, now the second position in the window is the gratest of the two */
                 tmp = array[j];
                 array[j] = array[j + 1];
-                array[j + 1] = tmp;  
+                array[j + 1] = tmp;
+                print_array(array, size);
             }
         }
     }
