@@ -63,7 +63,7 @@ void insertion_sort_list(listint_t **list)
 				h2 = h2->prev;
 			}
 		}
-	if(h->next)
+	if (h->next)
 		h = h->next;
 	}
 }
