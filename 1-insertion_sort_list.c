@@ -20,18 +20,29 @@ void insertion_sort_list(listint_t **list)
         if (h->next->n < h->n)
         {
             tmp1 = h;
-            tmp1->next = tmp1->next->next;
+            if (tmp1->prev)
+                    tmp1->prev->next = tmp1->next;
+            if (tmp1->next->next)
+                tmp1->next->next->prev = tmp1;
+
             tmp1->next->prev = tmp1->prev;
             tmp1->next->next = tmp1;
             tmp1->prev = tmp1->next;
+            tmp1->next = tmp1->next->next;
+
 
             while(h2->prev && h2->prev->n > h2->n)
             {
                 tmp2 = h2;
-                tmp2->next = tmp2->next->next;
+                if (tmp2->prev)
+                    tmp2->prev->next = tmp2->next;
+                if (tmp2->next->next)
+                    tmp2->next->next->prev = tmp2;
+
                 tmp2->next->prev = tmp2->prev;
                 tmp2->next->next = tmp2;
                 tmp2->prev = tmp2->next;
+                tmp2->next = tmp2->next->next;
 
                 h2 = h2->prev;
             }
