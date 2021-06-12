@@ -36,8 +36,7 @@ void insertion_sort_list(listint_t **list)
 				while(h2->prev && (h2->prev->n > h2->n))
 				{
 					tmp1 = h2;
-					if (tmp1->prev)
-						tmp1->prev->next = tmp1->next;
+					tmp1->prev->next = tmp1->next;
 					if (tmp1->next->next)
 						tmp1->next->next->prev = tmp1;
 
@@ -49,7 +48,6 @@ void insertion_sort_list(listint_t **list)
 					tmp1->next = tmp2;
 
 					h2 = h2->prev;
-			
 				}
 			}
 			h = h->next;
