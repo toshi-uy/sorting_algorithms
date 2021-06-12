@@ -24,21 +24,18 @@ void insertion_sort_list(listint_t **list)
 			if(tmp2 && tmp2->next)
 				tmp2->next->prev = tmp1;
 
+			tmp1->next = tmp2->next;
 			tmp2->prev = tmp1->prev;
 			tmp1->prev = tmp2;
-			tmp1->next = tmp2->next;
 			tmp2->next = tmp1;
 
 			print_list(*list);
-			printf("tmp1: %d\n h->prev: %d\n antes de entrar al if\n", tmp1->n, h->prev->n);
-			printf("h->prev->prev: %d\n", h->prev->prev->n);
 			h2 = h->prev;
 
 			if (h2->prev)
 			{
 				printf("h2: %d\nh2prev: %d\n", h2->n, h2->prev->n);
-				printf("entro al if\n");
-				if (h2->n > h2->prev->n)
+				if (h2->n < h2->prev->n)
 					printf("entro por fin!\n");
 				while(h2->prev && h2->n < h2->prev->n)
 				{
