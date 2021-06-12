@@ -56,7 +56,7 @@ void insertion_sort_list(listint_t **list)
 						print_list(*list);
 					}
 					else
-						h2 = h2->prev;
+						break;
 				}
 			}
 		}
