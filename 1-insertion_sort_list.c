@@ -30,7 +30,7 @@ void insertion_sort_list(listint_t **list)
 			tmp2->prev = tmp1->prev;
 			tmp2->next = tmp1;
 			print_list(*list);
-			printf("tmp1: %d\n h->prev: %d\n antes de entrar al if", tmp1->n, h->prev->n);
+			printf("tmp1: %d\n h->prev: %d\n antes de entrar al if\n", tmp1->n, h->prev->n);
 
 			h2 = h->prev;
 
