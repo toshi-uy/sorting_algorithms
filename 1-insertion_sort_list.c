@@ -35,6 +35,7 @@ void insertion_sort_list(listint_t **list)
 			h2 = h->prev;
 			if (h2->prev)
 			{
+				printf("entro al if\n");
 				while(h2->n < h2->prev->n)
 				{
 					tmp1 = h2;
