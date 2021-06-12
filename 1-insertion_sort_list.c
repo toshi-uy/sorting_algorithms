@@ -13,7 +13,6 @@ void insertion_sort_list(listint_t **list)
 	h = *list;
 	while(h->next)
 	{
-		printf("entro al primer while\n");
 		if (h->next->n < h->n)
 		{
 			tmp1 = h;
