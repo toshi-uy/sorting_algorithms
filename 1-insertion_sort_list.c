@@ -37,22 +37,25 @@ void insertion_sort_list(listint_t **list)
 				printf("h2: %d\nh2prev: %d\n", h2->n, h2->prev->n);
 				if (h2->n < h2->prev->n)
 					printf("entro por fin!\n");
-				while(h2->prev && h2->n < h2->prev->n)
+				while(h2->prev)
 				{
-					tmp1 = h2;
-					printf("entro al segundo while\n");
-					tmp2 = h2->prev;
-					if (tmp2->prev)
-						tmp2->prev->next = tmp1;
+					if (h2->n < h2->prev->n)
+					{
+						tmp1 = h2;
+						printf("entro al segundo while\n");
+						tmp2 = h2->prev;
+						if (tmp2->prev)
+							tmp2->prev->next = tmp1;
 
-					tmp1->next->prev = tmp2;
+						tmp1->next->prev = tmp2;
 
-					tmp2->next = tmp1->next;
-					tmp1->prev = tmp2->prev;
-					
-					tmp2->prev = tmp1;
-					tmp1->next = tmp2;
-					print_list(*list);
+						tmp2->next = tmp1->next;
+						tmp1->prev = tmp2->prev;
+						
+						tmp2->prev = tmp1;
+						tmp1->next = tmp2;
+						print_list(*list);
+					}
 				}
 			}
 		}
