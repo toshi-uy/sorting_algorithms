@@ -35,8 +35,9 @@ void insertion_sort_list(listint_t **list)
 			printf("h2: %d\nh: %d\n", h2->n, h->n);
 			if (h2->prev)
 			{
+				tmp2 = h2->prev;
 				printf("entro al if\n");
-				if (h2->n < h2->prev->n)
+				if (h2->n > tmp2->n)
 					printf("entro no se porque mierda");
 				while(h2->n < h2->prev->n)
 				{
