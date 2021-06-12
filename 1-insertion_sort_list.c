@@ -31,7 +31,7 @@ void insertion_sort_list(listint_t **list)
 
 				tmp2->prev = tmp1->prev;
 				tmp2->next = tmp1;
-				print_list(list);
+				print_list(*list);
 				h2 = h->prev;
 
 				while(h2->prev && (h2->prev->n > h2->n))
@@ -49,7 +49,7 @@ void insertion_sort_list(listint_t **list)
 					
 					tmp2->prev = tmp1;
 					tmp1->next = tmp2;
-					print_list(list);
+					print_list(*list);
 				}
 			}
 			else
