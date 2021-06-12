@@ -32,7 +32,8 @@ void insertion_sort_list(listint_t **list)
 			print_list(*list);
 			
 			if (tmp2)
-				h2 = tmp2/*;
+				h2 = tmp2;
+
 			if (h2->prev)
 			{
 				/* tmp2 = h2->prev; */
