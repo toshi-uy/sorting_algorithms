@@ -34,11 +34,9 @@ void insertion_sort_list(listint_t **list)
 
 			if (h2->prev)
 			{
-				printf("h2: %d\nh2prev: %d\n", h2->n, h2->prev->n);
-				if (h2->n < h2->prev->n)
-					printf("entro por fin!\n");
 				while(h2->prev)
 				{
+					printf("h2: %d\nh2prev: %d\n", h2->n, h2->prev->n);
 					if (h2->n < h2->prev->n)
 					{
 						tmp1 = h2->prev;
