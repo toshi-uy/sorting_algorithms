@@ -56,6 +56,8 @@ void insertion_sort_list(listint_t **list)
 						tmp1->next = tmp2;
 						print_list(*list);
 					}
+					else
+						h2 = h2->prev;
 				}
 			}
 		}
