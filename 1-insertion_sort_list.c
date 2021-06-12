@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "sort.h"
 
 /**
@@ -15,46 +13,50 @@ void insertion_sort_list(listint_t **list)
 	h = *list;
 	while(h->next)
 	{
-		h2 = h;
 		if(h->next)
 		{
 			if (h->next->n < h->n)
 			{
 				tmp1 = h;
-				if (tmp1->prev)
-					tmp1->prev->next = tmp1->next;
-				if (tmp1->next->next)
-					tmp1->next->next->prev = tmp1;
 
-				tmp1->next->prev = tmp1->prev;
-				tmp1->prev = tmp1->next;
-				if (tmp1->next->next)
-					tmp2 = tmp1->next->next;
-				tmp1->next->next = tmp1;
-				tmp1->next = tmp2;
+				if(h->next)
+					tmp2 = h->next;
+				if(tmp1->prev)
+					tmp1->prev->next = tmp2;
+				if(tmp2 && tmp2->next)
+					tmp2->next->prev = tmp1;
+
+				tmp1->prev = tmp2;
+				tmp1->next = tmp2->next;
+
+				tmp2->prev = tmp1->prev;
+				tmp2->next = tmp1;
+
+				h2 = h->prev;
 
 				while(h2->prev && (h2->prev->n > h2->n))
 				{
 					tmp1 = h2;
-					tmp1->prev->next = tmp1->next;
-					if (tmp1->next->next)
-						tmp1->next->next->prev = tmp1;
+					tmp2 = NULL;
 
-					tmp1->next->prev = tmp1->prev;
-					tmp1->prev = tmp1->next;
-					if (tmp1->next->next)
-						tmp2 = tmp1->next->next;
-					tmp1->next->next = tmp1;
+					tmp2 = h2->prev;
+					if (tmp2->prev)
+						tmp2->prev->next = tmp1;
+
+					tmp1->next->prev = tmp2;
+
+					tmp2->next = tmp1->next;
+					tmp1->prev = tmp2->prev;
+					
+					tmp2->prev = tmp1;
 					tmp1->next = tmp2;
-
-					h2 = h2->prev;
 				}
 			}
-			h = h->next;
+			else
+				h = h->next;
 		}
 	}
 }
-
 /**
  * 
  * tmp1 = h2
@@ -73,6 +75,8 @@ void insertion_sort_list(listint_t **list)
  * 
  * tmp2->prev = tmp1->prev
  * tmp2->next = tmp1
+ * 
+ * 
  * 
  * 
  */
