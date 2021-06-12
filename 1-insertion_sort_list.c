@@ -41,14 +41,14 @@ void insertion_sort_list(listint_t **list)
 					tmp2 = h2;
 					if(tmp1->prev)
 						tmp1->prev->next = tmp2;
+					else
+						*list = tmp1;
 					tmp2->next->prev = tmp1;
 
 					tmp1->next = tmp2->next;
 					tmp2->prev = tmp1->prev;
 					tmp1->prev = tmp2;
 					tmp2->next = tmp1;
-					if (!tmp1->prev)
-						*list = tmp1;
 					print_list(*list);
 				}
 				else
