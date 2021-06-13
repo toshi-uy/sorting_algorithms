@@ -17,7 +17,7 @@ void selection_sort(int *array, size_t size)
         max = i;
         for (j = i + 1; j < size; j++)
         {
-            if (array[j] > array[max])
+            if (array[j] < array[max])
                 max = j;
         }
 
