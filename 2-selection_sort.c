@@ -12,18 +12,18 @@ void selection_sort(int *array, size_t size)
     int max = 0, tmp = 0;
     size_t i = 0, j = 0;
 
-    for (i = 0; i < size - 1; i++)
+    for (i = 0; i < size - max; i++)
     {
         max = i;
-        for (j = i + 1; j < size; j++)
+        for (j = i + 1; j < size - 1; j++)
         {
             if (array[j] < array[max])
                 max = j;
         }
 
-        tmp = array[i];
-        array[i] = array[j];
-        array[i] = tmp;
+        tmp = array[max];
+        array[max] = array[j];
+        array[j] = tmp;
         print_array(array, size);
     }
 }
