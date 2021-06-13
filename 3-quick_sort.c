@@ -59,6 +59,7 @@ int lom_partition(int *array, int lo, int hi, size_t size)
 			i++;
 		}
 	}
+	printf("hi:%d\npivot:%d\n", hi, pivot);
 	swap(array, i, hi);
 	print_array(array, size);
 	return (i);
