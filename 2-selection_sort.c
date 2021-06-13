@@ -12,10 +12,9 @@ void selection_sort(int *array, size_t size)
     int max = 0, tmp = 0;
     size_t i = 0, j = 0;
 
-    for (; i < size - 1; i++)
+    for (i = 0; i < size - 1; i++)
     {
-        i = 0;
-        for (j = i + 1; j < size; j++)
+        for (j = 0; j < size; j++)
         {
             if (array[j] > array[max])
                 max = j;
