@@ -19,12 +19,10 @@ void selection_sort(int *array, size_t size)
 			if (array[j] < array[min])
 				min = j;
 		}
+			tmp = array[min];
+			array[min] = array[i];
+			array[i] = tmp;
 			if (min != i)
-			{
-				tmp = array[min];
-				array[min] = array[i];
-				array[i] = tmp;
-				print_array(array, size);ç
-			}
+				print_array(array, size);
 	}
 }
