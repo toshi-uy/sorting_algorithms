@@ -49,7 +49,7 @@ int lom_partition(int *array, int lo, int hi, size_t size)
 			i++;
 		}
 	}
-	swap(array, (i + 1), hi);
+	swap(array, i, hi);
 	print_array(array, size);
-	return(i + 1);
+	return(i);
 }
