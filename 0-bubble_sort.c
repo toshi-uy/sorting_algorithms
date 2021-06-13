@@ -22,7 +22,7 @@ void bubble_sort(int *array, size_t size)
 		 * Move the biggest to the second position of the bubble
 		 * The biggest element will move to the last position because
 		 * it will be always the gratest value in a bubble of two
-		 * 
+		 *
 		 * When the the loop gets two the end condition i will increment
 		 * and now the end of the loop will be the previous end - 1.
 		 * Now the last position will be occupied by the gratest number
