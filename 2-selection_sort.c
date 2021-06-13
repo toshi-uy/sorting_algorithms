@@ -21,9 +21,9 @@ void selection_sort(int *array, size_t size)
                 max = j;
         }
 
-        tmp = array[j];
-        array[j] = array[max];
-        array[max] = tmp;
+        tmp = array[i];
+        array[i] = array[j];
+        array[i] = tmp;
         print_array(array, size);
     }
 }
