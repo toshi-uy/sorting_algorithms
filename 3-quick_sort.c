@@ -2,7 +2,7 @@
 #include "swap.c"
 
 /**
- * selection_sort - this is the Selection sort algorithm implementation in C
+ * quick_sort - this is the Quick sort algorithm implementation in C
  * @array: array of ints
  * @size: size of array
  * Return: no-return (void function)
@@ -29,7 +29,7 @@ void quick_sort(int *array, size_t size)
 void lomuto_sort(int *array, int lo, int hi, size_t size)
 {
 	int p;
-	
+
 	if (lo < hi)
 	{
 		p = lom_partition(array, lo, hi, size);
@@ -37,6 +37,15 @@ void lomuto_sort(int *array, int lo, int hi, size_t size)
 		lomuto_sort(array, p + 1, hi, size);
 	}
 }
+
+/**
+ * lom_partition - Lomuto sorting partition
+ * @array: array of ints
+ * @size: size of array
+ * @lo: lower value
+ * @hi: highter value
+ * Return: no-return (void function)
+ */
 
 int lom_partition(int *array, int lo, int hi, size_t size)
 {
