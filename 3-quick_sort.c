@@ -40,7 +40,7 @@ int lom_partition(int *array, int lo, int hi, size_t size)
 	int pivot = array[hi], i = lo, j = lo;
 	
 
-	for (j; j <= hi; j++)
+	for (j; j <= size - 1;)
 	{
 		if (array[j] < pivot)
 		{
@@ -48,6 +48,7 @@ int lom_partition(int *array, int lo, int hi, size_t size)
 			print_array(array, size);
 			i++;
 		}
+		j++;
 	}
 	swap(array, (i + 1), hi);
 	print_array(array, size);
