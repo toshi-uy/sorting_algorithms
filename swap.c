@@ -7,11 +7,11 @@
  * @pos2: position of integer to swap
  */
 
-void swap(int *array, size_t pos1, size_t pos2)
+void swap(int *array, int pos1, int pos2)
 {
-    int tmp;
+	int tmp;
 
-    tmp = array[pos1];
-    array[pos1] = array[pos2];
-    array[pos2] = tmp;
+	tmp = array[pos1];
+	array[pos1] = array[pos2];
+	array[pos2] = tmp;
 }
