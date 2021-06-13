@@ -20,6 +20,7 @@ void selection_sort(int *array, size_t size)
             if (array[j] > array[max])
                 max = j;
         }
+        
         tmp = array[i];
         array[i] = max;
         max = tmp;
