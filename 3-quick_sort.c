@@ -11,6 +11,7 @@
 void quick_sort(int *array, size_t size)
 {
 	int lo = 0, hi = (size - 1);
+
 	printf("hight: %d\n", hi);
 
 	lomuto_sort(array, lo, hi, size);
@@ -28,12 +29,13 @@ void quick_sort(int *array, size_t size)
 void lomuto_sort(int *array, int lo, int hi, size_t size)
 {
 	int p;
+	
 	if (lo < hi)
 	{
 		p = lom_partition(array, lo, hi, size);
 		lomuto_sort(array, lo, p - 1, size);
 		lomuto_sort(array, p + 1, hi, size);
-	}	
+	}
 }
 
 int lom_partition(int *array, int lo, int hi, size_t size)
@@ -51,5 +53,5 @@ int lom_partition(int *array, int lo, int hi, size_t size)
 	}
 	swap(array, i, hi);
 	print_array(array, size);
-	return(i);
+	return (i);
 }
