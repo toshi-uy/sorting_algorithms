@@ -9,22 +9,19 @@
 
 void selection_sort(int *array, size_t size)
 {
-    int max = 0, tmp = 0;
-    size_t i = 0, j = 0, size2 = size;
+    int min = 0, tmp = 0;
+    size_t i = 0, j = 0;
 
     for (i = 0; i < size - 1; i++)
     {
-        max = 0;
-        for (j = 0; j < size2; j++)
+        min = i;
+        for (j = i + 1; j < size; j++)
         {
-            if (array[j] > array[max])
-                max = j;
+            if (array[j] > array[min])
+                min = j;
         }
-
-        tmp = array[max];
-        array[max] = array[j - 1];
-        array[j -1] = tmp;
-        print_array(array, size);
-        size2 -= 1;
+        tmp = array[i];
+        array[i] = min;
+        min = tmp;
     }
 }
