@@ -9,20 +9,20 @@
 
 void selection_sort(int *array, size_t size)
 {
-    int min = 0, tmp = 0;
+    int max = 0, tmp = 0;
     size_t i = 0, j = 0;
 
     for (i = 0; i < size - 1; i++)
     {
-        min = i;
+        max = i;
         for (j = i + 1; j < size; j++)
         {
-            if (array[j] < array[min])
-                min = j;
+            if (array[j] > array[max])
+                max = j;
         }
 
         tmp = array[i];
-        array[i] = min;
-        min = tmp;
+        array[i] = array[max];
+        array[max] = tmp;
     }
 }
