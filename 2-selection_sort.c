@@ -1,5 +1,5 @@
 #include "sort.h"
-#include "swap.c"
+
 /**
  * selection_sort - this is the Selection sort algorithm implementation in C
  * @array: array of ints

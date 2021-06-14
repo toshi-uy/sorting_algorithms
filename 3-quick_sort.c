@@ -1,5 +1,4 @@
 #include "sort.h"
-#include "swap.c"
 
 /**
  * quick_sort - this is the Quick sort algorithm implementation in C
