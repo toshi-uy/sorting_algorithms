@@ -38,8 +38,10 @@ void swap_forward(listint_t *head, listint_t **list)
 	if (tmp1->prev)
 		tmp2->prev = tmp1->prev;
 	if (!tmp1->prev)
+	{
 		*list = tmp2;
 		tmp2->prev = NULL;
+	}
 	tmp1->prev = tmp2;
 	tmp2->next = tmp1;
 }
