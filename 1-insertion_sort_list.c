@@ -1,15 +1,6 @@
 #include "sort.h"
 #include "swap.c"
 
-#ifndef PRINT_LIST
-#define PRINT_LIST
-#include "print_list.c"
-#endif
-#ifndef PRINT_ARRAY
-#define PRINT_ARRAY
-#include "print_list.c"
-#endif
-
 /**
  * insertion_sort_list - this is the Bubble sort algorithm implementation in C
  * @list: pointer to list

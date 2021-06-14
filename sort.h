@@ -13,6 +13,15 @@
 #include <stdarg.h>
 #include <ctype.h>
 
+#ifndef PRINT_LIST
+#define PRINT_LIST
+#include "print_list.c"
+#endif
+#ifndef PRINT_ARRAY
+#define PRINT_ARRAY
+#include "print_list.c"
+#endif
+
 /*Basic Structure*/
 /**
  * struct listint_s - Doubly linked list node
