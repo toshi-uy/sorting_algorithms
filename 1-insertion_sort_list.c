@@ -13,20 +13,23 @@ void insertion_sort_list(listint_t **list)
 
 	if (!list || !(*list) || !(*list)->next)
 		return;
-	while (h->next)
+	if (list && *list && (*list)->next)
 	{
-		if (h->next->n < h->n)
+		while (h->next)
 		{
-			swap_forward(h);
-			print_list(*list);
-			h2 = h->prev;
-			while (h2->prev && h2->n < h2->prev->n)
+			if (h->next->n < h->n)
 			{
-				swap_back(h2, &list);
+				swap_forward(h);
 				print_list(*list);
+				h2 = h->prev;
+				while (h2->prev && h2->n < h2->prev->n)
+				{
+					swap_back(h2, &list);
+					print_list(*list);
+				}
 			}
+			else
+				h = h->next;
 		}
-		else
-			h = h->next;
 	}
 }
