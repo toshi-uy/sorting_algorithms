@@ -18,10 +18,12 @@ void insertion_sort_list(listint_t **list)
 		if (h->next->n < h->n)
 		{
 			swap_forward(h, &list);
+			print_list(*list);
 			h2 = h->prev;
 			while (h2->prev && h2->n < h2->prev->n)
 			{
 				swap_back(h2, &list);
+				print_list(*list);
 			}
 		}
 		else
