@@ -32,6 +32,7 @@ void insertion_sort_list(listint_t **list)
 			}
 		}
 		else
-			h = h->next;
+			if (h->next)
+				h = h->next;
 	}
 }
