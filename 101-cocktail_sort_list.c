@@ -4,6 +4,7 @@
 /**
  * recursive_func_forward - this is the Cocktail sort algorithm implementation in C
  * @list: pointer to list
+ * @min:
  * @
  * Return: no-return (void function)
  */
