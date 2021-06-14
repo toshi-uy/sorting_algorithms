@@ -40,7 +40,7 @@ void bubble_sort(int *array, size_t size)
 				 * in the window is the gratest of the two
 				 */
 
-				swap(array, array[j], array[j + 1]);
+				swap(array, j, j + 1);
 				print_array(array, size);
 			}
 		}
