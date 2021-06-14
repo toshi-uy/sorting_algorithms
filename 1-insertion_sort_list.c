@@ -20,19 +20,14 @@ void insertion_sort_list(listint_t **list)
 		{
 			swap_forward(h);
 			print_list(*list);
-			if (h->prev)
-				h2 = h->prev;
-			if (h2->prev)
+			h2 = h->prev;
+			while (h2->prev && h2->n < h2->prev->n)
 			{
-				while (h2->prev && h2->n < h2->prev->n)
-				{
-					swap_back(h2, list);
-					print_list(*list);
-				}
+				swap_back(h2, list);
+				print_list(*list);
 			}
 		}
 		else
-			if (h->next)
-				h = h->next;
+			h = h->next;
 	}
 }
