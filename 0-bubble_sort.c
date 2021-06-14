@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
+#include "swap.c"
 
 /**
  * bubble_sort - this is the Bubble sort algorithm implementation in C
@@ -40,9 +41,7 @@ void bubble_sort(int *array, size_t size)
 				 * in the window is the gratest of the two
 				 */
 
-				tmp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = tmp;
+				swap(array, array[j], array[j + 1]);
 				print_array(array, size);
 			}
 		}

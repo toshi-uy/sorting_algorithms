@@ -19,6 +19,7 @@ void swap(int *array, int pos1, int pos2)
 /**
  * swap_forward - swap nodes with next in double linked list 
  * @head: pointer to head of list
+ * @list: pointer to pointer of list
  */
 
 void swap_forward(listint_t *head, listint_t **list)
@@ -42,6 +43,7 @@ void swap_forward(listint_t *head, listint_t **list)
 /**
  * swap_forward - swap nodes with next in double linked list 
  * @head: pointer to head of list
+ * @list: pointer to pointer of list
  */
 
 void swap_back(listint_t *head, listint_t **list)

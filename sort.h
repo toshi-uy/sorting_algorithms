@@ -12,7 +12,6 @@
 #include <time.h>
 #include <stdarg.h>
 #include <ctype.h>
-#include "swap.c"
 
 /*Basic Structure*/
 /**
