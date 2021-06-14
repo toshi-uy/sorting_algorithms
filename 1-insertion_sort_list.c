@@ -9,27 +9,25 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *h = *list, *h2 = NULL;
+	listint_t *h, *h2 = NULL;
 
 	if (!list || !(*list) || !(*list)->next)
 		return;
-	if (list || *list || (*list)->next)
+	h = *list;
+	while (h->next)
 	{
-		while (h->next)
+		if (h->next->n < h->n)
 		{
-			if (h->next->n < h->n)
+			swap_forward(h);
+			print_list(*list);
+			h2 = h->prev;
+			while (h2->prev && h2->n < h2->prev->n)
 			{
-				swap_forward(h);
+				swap_back(h2, list);
 				print_list(*list);
-				h2 = h->prev;
-				while (h2->prev && h2->n < h2->prev->n)
-				{
-					swap_back(h2, list);
-					print_list(*list);
-				}
 			}
-			else
-				h = h->next;
 		}
+		else
+			h = h->next;
 	}
 }
