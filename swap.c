@@ -57,6 +57,7 @@ void swap_back(listint_t *head, listint_t **list)
 	tmp1 = head;
 	if (tmp2->prev)
 		tmp2->prev->next = tmp1;
+		tmp1->prev = tmp2->prev;
 	tmp1->next->prev = tmp2;
 	tmp2->next = tmp1->next;
 	tmp2->prev = tmp1;
