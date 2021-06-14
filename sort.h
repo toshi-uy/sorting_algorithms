@@ -50,6 +50,8 @@ void quick_sort_hoare(int *array, size_t size);
 /* Auxiliary functions */
 void lomuto_sort(int *array, int lo, int hi, size_t size);
 int lom_partition(int *array, int lo, int hi, size_t size);
+void recursive_func_forward(listint_t *min, listint_t *max, listint_t **list);
+void recursive_func_back(listint_t *min, listint_t *max, listint_t **list);
 
 /* EXTRA */
 /* void sort_deck(deck_node_t **deck); */
