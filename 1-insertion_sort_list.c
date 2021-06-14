@@ -22,10 +22,13 @@ void insertion_sort_list(listint_t **list)
 			print_list(*list);
 			if (h->prev)
 				h2 = h->prev;
-			while (h2->prev && h2->n < h2->prev->n)
+			if (h2->prev)
 			{
-				swap_back(h2, list);
-				print_list(*list);
+				while (h2->prev && h2->n < h2->prev->n)
+				{
+					swap_back(h2, list);
+					print_list(*list);
+				}
 			}
 		}
 		else
