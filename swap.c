@@ -22,7 +22,7 @@ void swap(int *array, int pos1, int pos2)
  * @list: pointer to pointer of list
  */
 
-void swap_forward(listint_t *head, listint_t **list)
+void swap_forward(listint_t *head)
 {
 	listint_t *tmp1 = NULL, *tmp2 = NULL;
 

@@ -17,7 +17,7 @@ void insertion_sort_list(listint_t **list)
 	{
 		if (h->next->n < h->n)
 		{
-			swap_forward(h, &list);
+			swap_forward(h);
 			print_list(*list);
 			h2 = h->prev;
 			while (h2->prev && h2->n < h2->prev->n)
