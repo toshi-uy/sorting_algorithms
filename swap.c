@@ -1,4 +1,6 @@
 #include"sort.h"
+#include "print_list.c"
+#include "print_array.c"
 
 /**
  * swap - swap to integers in an array
