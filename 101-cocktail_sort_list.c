@@ -4,8 +4,8 @@
 /**
  * recursive_func_forward - this is the Cocktail sort algorithm implementation in C
  * @list: pointer to list
- * @min: min node 
- * @max: 
+ * @min: min node value of the list
+ * @max: mmax value of the list
  * Return: no-return (void function)
  */
 
@@ -27,7 +27,7 @@ void recursive_func_forward(listint_t *min, listint_t *max, listint_t **list)
 			h = h->next;
 		}
 	}
-	if (no_swap == 1 && h->next == max)
+	if (no_swap == 1 && h == max)
 		return;
 	h->prev = max;
 	recursive_func_back(min, max, list);
@@ -36,6 +36,8 @@ void recursive_func_forward(listint_t *min, listint_t *max, listint_t **list)
 /**
  * recursive_func_back - this is the Cocktail sort algorithm implementation in C
  * @list: pointer to list
+ * @min: min node value of the list
+ * @max: mmax value of the list
  * Return: no-return (void function)
  */
 
@@ -57,7 +59,7 @@ void recursive_func_back(listint_t *min, listint_t *max, listint_t **list)
 			h = h->prev;
 		}	
 	}
-	if (no_swap == 1 && h->prev == min)
+	if (no_swap == 1 && h == min)
 		return;
 	h->next = min;
 	recursive_func_forward(min, max, list);
