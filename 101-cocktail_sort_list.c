@@ -2,7 +2,7 @@
 #include "swap.c"
 
 /**
- * cocktail_sort_list - this is the Cocktail sort algorithm implementation in C
+ * recursive_func_forward - this is the Cocktail sort algorithm implementation in C
  * @list: pointer to list
  * Return: no-return (void function)
  */
@@ -28,8 +28,14 @@ void recursive_func_forward(listint_t *min, listint_t *max, listint_t **list)
 	if (no_swap == 1 && h->next == max)
 		return;
 	h->prev = max;
-	recursive_func_back(min, max, list));
+	recursive_func_back(min, max, list);
 }
+
+/**
+ * recursive_func_back - this is the Cocktail sort algorithm implementation in C
+ * @list: pointer to list
+ * Return: no-return (void function)
+ */
 
 void recursive_func_back(listint_t *min, listint_t *max, listint_t **list)
 {
