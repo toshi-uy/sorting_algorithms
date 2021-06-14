@@ -7,7 +7,7 @@
  * Return: no-return (void function)
  */
 
-listint_t recursive_func_forward(listint_t *min, listint_t *max, listint_t **list)
+void recursive_func_forward(listint_t *min, listint_t *max, listint_t **list)
 {
 	listint_t *h = min;
 	int no_swap = 0;
@@ -31,7 +31,7 @@ listint_t recursive_func_forward(listint_t *min, listint_t *max, listint_t **lis
 	return (recursive_func_back(min, max, list));
 }
 
-listint_t recursive_func_back(listint_t *min, listint_t *max, listint_t **list)
+void recursive_func_back(listint_t *min, listint_t *max, listint_t **list)
 {
 	listint_t *h = min;
 	int no_swap = 0;
