@@ -94,7 +94,7 @@ void cocktail_sort_list(listint_t **list)
 		}
 	}
 	min = *list;
-	if (!h->next && h->prev)
+	if (!h->next)
 	{
 		h = max;
 	}
