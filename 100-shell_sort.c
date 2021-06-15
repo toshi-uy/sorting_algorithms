@@ -22,13 +22,13 @@ void shell_sort(int *array, size_t size)
 		for (i = 0; i < gap; i++)
 		{
 			j = i;
-			while (j <= size - 1)
+			while ((j + gap) <= size - 1)
 			{
 				if (array[j] > array[j + gap])
 				{
 					swap(array, j, j + gap);
 					k = j;
-					while (array[k] < array[k - gap])
+					while (k - gap > 0 && array[k] < array[k - gap])
 					{
 						swap(array, k, k - gap);
 						k -= gap;
