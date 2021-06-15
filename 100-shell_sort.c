@@ -1,4 +1,5 @@
 #include "sort.h"
+#include "swap.c"
 
 /**
  * insertion - this is the insertion sort algorithm implementation in C
@@ -10,7 +11,6 @@
 void insertion(int *array, size_t size)
 {
 	size_t i = 0, j = 0;
-	int temp = 0;
 
 	for (i = 1; i < size; i++)
 	{
@@ -37,8 +37,7 @@ void insertion(int *array, size_t size)
 
 void shell_sort(int *array, size_t size)
 {
-	size_t gap = 0;
-	int i = 0;
+	size_t gap = 0, i = 0;
 
 	while (gap < size / 3)
 		gap = (gap * 3) + 1;
