@@ -28,7 +28,7 @@ void shell_sort(int *array, size_t size)
 				{
 					swap(array, j, j + gap);
 					k = j;
-					while ((k - gap) >= inicio >= inicio && array[k] < array[k - gap])
+					while ((k - gap) >= inicio && array[k] < array[k - gap])
 					{
 						swap(array, k, k - gap);
 						k -= gap;
