@@ -7,7 +7,7 @@
  * @size: size of array
  * Return: no-return (void function)
  */
- 
+
 void insertion(int *array, size_t size)
 {
 	size_t i = 0, j = 0;
@@ -26,7 +26,6 @@ void insertion(int *array, size_t size)
 		}
 	}
 }
-
 
 /**
  * shell_sort - this is the Shell sort algorithm implementation in C
