@@ -10,9 +10,9 @@
  
 void insertion(int *array, size_t size)
 {
-	size_t i = 1, j = 1;
+	size_t i = 1, j = 0;
 
-	for (i = 1; i < size; i++)
+	for (; i < size; i++)
 	{
 		if (array[i] > array[i + 1])
 		{
