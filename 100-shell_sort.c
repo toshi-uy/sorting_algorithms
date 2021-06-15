@@ -42,7 +42,6 @@ void shell_sort(int *array, size_t size)
 		gap = (gap * 3) + 1;
 	while (gap > 0)
 	{
-		printf("gap:%lu\n", gap);
 		if (gap != 1)
 		{
 			while (i < size - 1 && (i + gap) != size)
