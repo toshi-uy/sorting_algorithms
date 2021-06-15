@@ -2,32 +2,6 @@
 #include "swap.c"
 
 /**
- * insertion - this is the insertion sort algorithm implementation in C
- * @array: array of ints
- * @size: size of array
- * Return: no-return (void function)
- */
-
-void insertion(int *array, size_t size)
-{
-	size_t i = 0, j = 0;
-
-	for (; i < size - 1; i++)
-	{
-		if (array[i] > array[i + 1])
-		{
-			swap(array, i, i + 1);
-			j = i;
-			while (j > 0 && array[j] < array[j - 1])
-			{
-				swap(array, j, j - 1);
-				j--;
-			}
-		}
-	}
-}
-
-/**
  * shell_sort - this is the Shell sort algorithm implementation in C
  * @array: array of ints
  * @size: size of array
@@ -36,27 +10,31 @@ void insertion(int *array, size_t size)
 
 void shell_sort(int *array, size_t size)
 {
-	size_t gap = 1, i = 0;
+	size_t gap = 1, i = 0, j = 0, k = 0;
 
 	while (gap < size / 3)
 		gap = (gap * 3) + 1;
 	while (gap > 0)
 	{
-		if (gap != 1)
+		for (; i < gap; i++)
 		{
-			while (i < size - 1 && (i + gap) != size)
+			j = i;
+			while ((j + gap) <= size - 1)
 			{
-				if (array[i] > array[i + gap])
+				if (array[j] > array[j + gap])
 				{
-					swap(array, i, i + gap);
+					swap(array, j, j + gap);
+					k = j;
+					while (k > 0 && array[k] < array[k - gap])
+					{
+						swap(array, k, k - gap);
+						k -= gap;
+					}
 				}
-				i++;
+				j += gap;
 			}
-			
 		}
-		else
-			insertion(array, size);
 		print_array(array, size);
-		gap = (gap - 1) / 3;
+		gap /= 3;
 	}
 }
