@@ -30,7 +30,7 @@ void recursive_func_forward(listint_t *min, listint_t *max, listint_t **list)
 	}
 	if (no_swap == 1 && h == max->prev)
 		return;
-	h = min;
+	max = h;
 	recursive_func_back(min, max, list);
 }
 
@@ -63,7 +63,7 @@ void recursive_func_back(listint_t *min, listint_t *max, listint_t **list)
 	}
 	if (no_swap == 1 && h == min->next)
 		return;
-	h = min;
+	min = h;
 	recursive_func_forward(min, max, list);
 }
 /**
