@@ -52,19 +52,11 @@ void shell_sort(int *array, size_t size)
 				}
 				i++;
 			}
-			i = size - 1;
-			while (i - gap > 0)
-			{
-				if (array[i] < array[i - gap])
-				{
-					swap(array, i, i - gap);
-				}
-				i--;
-			}
+			
 		}
 		else
 			insertion(array, size);
 		print_array(array, size);
-		gap /= 3;
+		gap = (gap - 1) / 3;
 	}
 }
