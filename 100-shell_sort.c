@@ -18,7 +18,7 @@ void insertion(int *array, size_t size)
 		{
 			swap(array, i, i + 1);
 			j = i;
-			while (j > 0 && array[j] > array[j - 1])
+			while (j > 0 && array[j] < array[j - 1])
 			{
 				swap(array, j, j - 1);
 				j--;
