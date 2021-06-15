@@ -52,6 +52,7 @@ void shell_sort(int *array, size_t size)
 				}
 				i++;
 			}
+			i = size - 1;
 			while (i - gap > 0)
 			{
 				if (array[i] < array[i - gap])
