@@ -37,7 +37,7 @@ void insertion(int *array, size_t size)
 
 void shell_sort(int *array, size_t size)
 {
-	size_t gap = 1, i = 1;
+	size_t gap = 1, i = 0;
 
 	while (gap < size / 3)
 		gap = (gap * 3) + 1;
@@ -46,7 +46,7 @@ void shell_sort(int *array, size_t size)
 		printf("gap:%lu\n", gap);
 		if (gap != 1)
 		{
-			while (i < size && (i + gap) != size)
+			while (i < size - 1 && (i + gap) != size)
 			{
 				if (array[i] < array[i + gap])
 				{
