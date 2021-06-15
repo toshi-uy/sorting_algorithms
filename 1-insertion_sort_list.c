@@ -2,7 +2,8 @@
 #include "swap.c"
 
 /**
- * insertion_sort_list - this is the Bubble sort algorithm implementation in C
+ * insertion_sort_list - this is the insertion sort
+ * algorithm implementation in C
  * @list: pointer to list
  * Return: no-return (void function)
  */
