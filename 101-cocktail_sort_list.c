@@ -96,7 +96,7 @@ void cocktail_sort_list(listint_t **list)
 	min = *list;
 	if (!h->next)
 	{
-		h = max;
+		max = h;
 	}
 	if (no_swap == 1 && h->next == NULL)
 		return;
