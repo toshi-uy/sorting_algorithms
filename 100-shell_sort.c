@@ -10,7 +10,7 @@
  
 void insertion(int *array, size_t size)
 {
-	size_t i = 0, j = 0;
+	size_t i = 1, j = 1;
 
 	for (i = 1; i < size; i++)
 	{
