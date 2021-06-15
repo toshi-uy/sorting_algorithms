@@ -12,15 +12,24 @@
 void recursive_func_forward(listint_t *min, listint_t *max, listint_t **list)
 {
 	listint_t *h = NULL;
-	int no_swap = 0;
+	int no_swap = 1;
 
 	h = min;
-	while(h->next != max->prev)
+	while(h->next != max)
 	{
 		if (h->n > h->next->n)
 		{
-			swap_forward(h, list);
-			no_swap = 0;
+			if (h->next == max)
+			{
+				swap_forward(h, list);
+				no_swap = 0;
+				break;
+			}
+			else
+			{
+				swap_forward(h, list);
+				no_swap = 0;
+			}
 		}
 		else
 		{
@@ -30,7 +39,7 @@ void recursive_func_forward(listint_t *min, listint_t *max, listint_t **list)
 	}
 	if (no_swap == 1 && h == max->prev)
 		return;
-	max = h;
+	max = h->prev;
 	recursive_func_back(min, max, list);
 }
 
@@ -45,15 +54,24 @@ void recursive_func_forward(listint_t *min, listint_t *max, listint_t **list)
 void recursive_func_back(listint_t *min, listint_t *max, listint_t **list)
 {
 	listint_t *h;
-	int no_swap = 0;
+	int no_swap = 1;
 
 	h = max;
-	while (h->prev)
+	while (h != min)
 	{
-		if (h->n > h->prev->n)
+		if (h->n < h->prev->n)
 		{
-			swap_back(h, list);
-			no_swap = 0;
+			if (h->prev == min)
+			{
+				swap_back(h, list);
+				no_swap = 0;
+				break;
+			}
+			else
+			{
+				swap_back(h, list);
+				no_swap = 0;			
+			}
 		}
 		else
 		{
@@ -61,9 +79,9 @@ void recursive_func_back(listint_t *min, listint_t *max, listint_t **list)
 			h = h->prev;
 		}	
 	}
-	if (no_swap == 1 && h == min->next)
+	if (no_swap == 1 && h == min)
 		return;
-	min = h;
+	min = h->next;
 	recursive_func_forward(min, max, list);
 }
 /**
@@ -75,7 +93,7 @@ void recursive_func_back(listint_t *min, listint_t *max, listint_t **list)
 void cocktail_sort_list(listint_t **list)
 {
 	listint_t *h = NULL, *max = NULL, *min = NULL;
-	int no_swap = 0;
+	int no_swap = 1;
 
 	if (!list || !(*list) || !(*list)->next)
 		return;
