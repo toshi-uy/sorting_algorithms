@@ -2,6 +2,28 @@
 #include "swap.c"
 
 /**
+ * biggest_num - function to get the biggest 
+ * number in the array
+ * @array: array of integers
+ * @size: size of array
+ * Return: the biggest number.
+ */
+
+int biggest_num(int *array, size_t size)
+{
+	size_t i;
+	int biggest;
+
+	for (i = 0; i < size; i++)
+	{
+		if (biggest < array[i])
+			biggest = array[i];
+	}
+	biggest += 1;
+	return(biggest);
+}
+
+/**
  * counting_sort - this is the Counting sort algorithm
  * implementation in C
  * @array: array of integers
@@ -16,12 +38,7 @@ void counting_sort(int *array, size_t size)
 
 	if (!array || size < 2)
 		return;
-	for (i = 0; i < size; i++)
-	{
-		if (biggest < array[i])
-			biggest = array[i];
-	}
-	biggest += 1;
+	biggest = biggest_num(array, size);
 	index = malloc(sizeof(int) * biggest);
 	for (j = 0; j < biggest; j++)
 		index[j] = 0;
