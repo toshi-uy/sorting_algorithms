@@ -36,17 +36,20 @@ void counting_sort(int *array, size_t size)
 		}
 		index[j] = count;
 	}
-	print_array(index, biggest);
 	printf("\n");
 	for (j = 1; j < biggest; j++)
 	{
 		index[j] += index[j - 1];
 	}
 	print_array(index, biggest);
-	/*for (k = 1; k < size_i; k++)
+	for (k = biggest; k > 0; k--)
 	{
-		if (aux[k] < aux[k + 1])
-			array[aux[k]] = k + 1;
-	}*/
+		if (index[k] > index[k - 1])
+			while(index[k] - index[k - 1] >= 1)
+			{
+				array[index[k] - 1] = k;
+				index[k] -= 1;
+			}
+	}
 	free(index);
 }
