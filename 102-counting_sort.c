@@ -35,7 +35,6 @@ void counting_sort(int *array, size_t size)
 		}
 		index[j] = count;
 	}
-	printf("\n");
 	for (j = 1; j < biggest; j++)
 	{
 		index[j] += index[j - 1];
