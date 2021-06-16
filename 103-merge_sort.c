@@ -9,7 +9,7 @@
  * Return: the biggest number.
  */
 
-void merge_rec(int *array, int start, int end, int *aux)
+void merge_rec(int *array, int start, int end, int aux[])
 {
     int mid;
     int pointer_left = start;       // pointer_left points to the beginning of the left sub-array
@@ -47,7 +47,7 @@ void merge_rec(int *array, int start, int end, int *aux)
 
 void merge_sort(int *array, size_t size)
 {
-    int i = 0, j = 0, mid = 0, *aux;
+    int i = 0, j = 0, aux[size];
     j = size;
 
     merge_rec(array, i, j, aux);
