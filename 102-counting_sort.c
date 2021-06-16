@@ -37,7 +37,7 @@ void counting_sort(int *array, size_t size)
 		index[j] = count;
 	}
 
-	for (j = 1; j <= biggest; j++)
+	for (j = 1; j < size_i; j++)
 	{
 		index[j] += index[j - 1];
 	}
