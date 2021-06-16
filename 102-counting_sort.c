@@ -23,7 +23,7 @@ void counting_sort(int *array, size_t size)
 
 	for (j = 0; j < biggest; j++)
 		index[j] = 0;
-	for (j = 0; j <= biggest; j++)
+	for (j = 0; j <= biggest + 1; j++)
 	{
 		count = 0;
 		for (i = 0; i < size; i++)
