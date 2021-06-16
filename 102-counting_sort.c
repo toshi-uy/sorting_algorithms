@@ -32,8 +32,10 @@ void counting_sort(int *array, size_t size)
 				count += 1;
 				break;
 			}
-		}		}	
-	print_array(index, size_i);	for (k = 0; k < size_i - 1; k++)
+		}
+	}
+	print_array(index, size_i);
+	for (k = 0; k < size_i - 1; k++)
 	{
 		if (index[k] < index[k + 1])
 			array[index[k]] = k;
