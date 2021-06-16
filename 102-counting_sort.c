@@ -2,7 +2,7 @@
 #include "swap.c"
 
 /**
- * biggest_num - function to get the biggest 
+ * biggest_num - function to get the biggest
  * number in the array
  * @array: array of integers
  * @size: size of array
@@ -20,7 +20,7 @@ int biggest_num(int *array, size_t size)
 			biggest = array[i];
 	}
 	biggest += 1;
-	return(biggest);
+	return (biggest);
 }
 
 /**
