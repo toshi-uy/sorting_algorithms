@@ -48,7 +48,7 @@ void merge_rec(int *array, int start, int end, int aux[])
 
 void merge_sort(int *array, size_t size)
 {
-    int i = 0, j = 0, aux[size];
+    int i = 0, j = 0, aux[100];
     j = size;
 
     merge_rec(array, i, j, aux);
