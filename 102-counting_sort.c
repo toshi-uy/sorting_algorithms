@@ -19,8 +19,8 @@ void counting_sort(int *array, size_t size)
 		if (biggest < array[i])
 			biggest = array[i];
 	}
-	biggest += 1;
-	index = malloc(sizeof(int) * (biggest + 1));
+	biggest += 2;
+	index = malloc(sizeof(int) * biggest);
 
 	for (j = 0; j <= biggest; j++)
 		index[j] = 0;
