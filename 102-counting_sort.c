@@ -20,11 +20,11 @@ void counting_sort(int *array, size_t size)
 			biggest = array[i];
 	}
 	biggest += 1;
-	index = malloc(sizeof(int) * biggest);
+	index = malloc(sizeof(int) * (biggest + 1));
 
-	for (j = 0; j <= biggest + 1; j++)
+	for (j = 0; j <= biggest; j++)
 		index[j] = 0;
-	for (j = 0; j <= biggest + 1; j++)
+	for (j = 0; j <= biggest; j++)
 	{
 		count = 0;
 		for (i = 0; i < size; i++)
