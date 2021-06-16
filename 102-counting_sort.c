@@ -19,13 +19,13 @@ void counting_sort(int *array, size_t size)
 		if (biggest < array[i])
 			biggest = array[i];
 	}
-	aux = malloc(sizeof(int) * (biggest + 1));
 	index = malloc(sizeof(int) * (biggest + 1));
 
 	for (j = 0; j < biggest; i++)
-		aux[j] = 0;
+		index[j] = 0;
 	for (j = 0; j <= biggest; j++)
 	{
+		count = 0;
 		size_i += 1;
 		for (i = 0; i < size; i++)
 		{
@@ -34,13 +34,18 @@ void counting_sort(int *array, size_t size)
 				count += 1;
 			}
 		}
-		aux[j] = count;
+		index[j] = count;
 	}
-	print_array(aux, size_i);
-	for (k = 1; k < size_i; k++)
+
+	for (j = 1; j <= biggest; j++)
+	{
+		index[j] += index[j - 1]
+	}
+	print_array(index, biggest);
+	/*for (k = 1; k < size_i; k++)
 	{
 		if (aux[k] < aux[k + 1])
 			array[aux[k]] = k + 1;
-	}
+	}*/
 	free(index);
 }
