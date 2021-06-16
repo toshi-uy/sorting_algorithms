@@ -22,7 +22,7 @@ void recursive_func_forward(listint_t *min, listint_t *max, listint_t **list)
 		{
 			if (h->next == max)
 			{
-				swap_forward(h, list);
+				swap_forward(h, &list);
 				print_list(*list);
 				no_swap = 0;
 				break;
