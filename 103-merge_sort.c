@@ -12,8 +12,8 @@
 void merge_rec(int *array, int start, int end, int aux[])
 {
     int mid;
-    int pointer_left = start;       // pointer_left points to the beginning of the left sub-array
-    int pointer_right = mid + 1;        // pointer_right points to the beginning of the right sub-array
+    int pointer_left;       // pointer_left points to the beginning of the left sub-array
+    int pointer_right;        // pointer_right points to the beginning of the right sub-array
     int k;      // k is the loop counter
 
     if (end <= start)
@@ -22,7 +22,8 @@ void merge_rec(int *array, int start, int end, int aux[])
     merge_rec(array, start, mid, aux);
     merge_rec(array, mid + 1, end, aux);
 
-
+    pointer_left = start;
+    pointer_right = mid + 1;
     // we loop from i to j to fill each element of the final merged array
     for (k = start; k <= end; k++) {
         if (pointer_left == mid + 1) {      // left pointer has reached the limit
