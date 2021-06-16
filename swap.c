@@ -39,7 +39,7 @@ void swap_forward(listint_t *head, listint_t **list)
 		tmp2->prev = tmp1->prev;
 	if (!tmp1->prev)
 	{
-		&*list = tmp2;
+		*list = tmp2;
 		tmp2->prev = NULL;
 	}
 	tmp1->prev = tmp2;
@@ -66,5 +66,5 @@ void swap_back(listint_t *head, listint_t **list)
 	tmp2->prev = tmp1;
 	tmp1->next = tmp2;
 	if (!tmp1->prev)
-		&*list = tmp1;
+		*list = tmp1;
 }

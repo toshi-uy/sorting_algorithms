@@ -43,7 +43,7 @@ void recursive_func_forward(listint_t *min, listint_t *max, listint_t **list)
 	if (no_swap == 1 && h == max->prev)
 		return;
 	max = h->prev;
-	recursive_func_back(min, max, list);
+	recursive_func_back(min, max, &*list);
 }
 
 /**
@@ -67,14 +67,14 @@ void recursive_func_back(listint_t *min, listint_t *max, listint_t **list)
 		{
 			if (h->prev == min)
 			{
-				swap_back(h, list);
+				swap_back(h, &list);
 				print_list(*list);
 				no_swap = 0;
 				break;
 			}
 			else
 			{
-				swap_back(h, list);
+				swap_back(h, &list);
 				print_list(*list);
 				no_swap = 0;
 			}
@@ -88,7 +88,7 @@ void recursive_func_back(listint_t *min, listint_t *max, listint_t **list)
 	if (no_swap == 1 && h == min)
 		return;
 	min = h->next;
-	recursive_func_forward(min, max, list);
+	recursive_func_forward(min, max, &*list);
 }
 /**
  * cocktail_sort_list - this is the Cocktail sort algorithm implementation in C
@@ -108,7 +108,7 @@ void cocktail_sort_list(listint_t **list)
 	{
 		if (h->n > h->next->n)
 		{
-			swap_forward(h, list);
+			swap_forward(h, &*list);
 			print_list(*list);
 			no_swap = 0;
 		}
@@ -126,5 +126,5 @@ void cocktail_sort_list(listint_t **list)
 	if (no_swap == 1 && h->next == NULL)
 		return;
 
-	recursive_func_back(min, max, list);
+	recursive_func_back(min, max, &*list);
 }
