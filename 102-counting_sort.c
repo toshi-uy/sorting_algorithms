@@ -24,7 +24,6 @@ void counting_sort(int *array, size_t size)
 	for (j = 0; j <= biggest + 1; j++)
 	{
 		size_i += 1;
-		index[j] = count;
 		for (i = 0; i < size; i++)
 		{
 			if (array[i] == j)
@@ -33,6 +32,7 @@ void counting_sort(int *array, size_t size)
 				break;
 			}
 		}
+		index[j] = count;
 	}
 	print_array(index, size_i);
 	for (k = 0; k < size_i - 1; k++)
