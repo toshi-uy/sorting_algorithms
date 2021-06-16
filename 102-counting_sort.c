@@ -14,6 +14,8 @@ void counting_sort(int *array, size_t size)
 	unsigned int i;
 	int j, k, *index, biggest = 0, count = 0;
 
+	if (!array || size < 2)
+		return;
 	for (i = 0; i < size; i++)
 	{
 		if (biggest < array[i])
