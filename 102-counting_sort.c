@@ -12,7 +12,7 @@
 int biggest_num(int *array, size_t size)
 {
 	size_t i;
-	int biggest;
+	int biggest = 0;
 
 	for (i = 0; i < size; i++)
 	{
