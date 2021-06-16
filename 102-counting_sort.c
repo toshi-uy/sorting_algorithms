@@ -2,7 +2,7 @@
 #include "swap.c"
 
 /**
- * counting sort - this is the Counting sort algorithm
+ * counting_sort - this is the Counting sort algorithm
  * implementation in C
  * @array: array of integers
  * @size: size of array
