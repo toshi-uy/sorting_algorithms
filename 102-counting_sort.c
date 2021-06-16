@@ -12,7 +12,8 @@
 
 void counting_sort(int *array, size_t size)
 {
-	unsigned int i, j, k, size_i = 0, *index, biggest = 0, count = 0;
+	unsigned int i;
+	int j, k, size_i = 0, *index, biggest = 0, count = 0;
 
 
 	for (i = 0; i < size; i++)
@@ -22,7 +23,6 @@ void counting_sort(int *array, size_t size)
 	}	
 	index = malloc(sizeof(int) * (biggest + 2));
 
-	
 	for (j = 0; j <= biggest; j++)
 	{
 		size_i += 1;
