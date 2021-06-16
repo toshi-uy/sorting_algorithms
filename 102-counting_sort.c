@@ -37,10 +37,10 @@ void counting_sort(int *array, size_t size)
 		aux[j] = count;
 	}
 	print_array(aux, size_i);
-	for (k = 1; k < size_i; k++)
+	/* for (k = 1; k < size_i; k++)
 	{
 		if (index[k] < index[k + 1])
 			array[index[k]] = k + 1;
 	}
-	free(index);
+	free(index);*/
 }
