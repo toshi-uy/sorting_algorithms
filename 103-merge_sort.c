@@ -12,12 +12,37 @@
 void merge_rec(int *array, int start, int end, int *aux)
 {
     int mid;
+    int pointer_left = start;       // pointer_left points to the beginning of the left sub-array
+    int pointer_right = mid + 1;        // pointer_right points to the beginning of the right sub-array
+    int k;      // k is the loop counter
 
-    if (j <= i)
+    if (end <= start)
         return;
-    mid = (j - i)/2;
-    merge_rec(array, i, mid, aux);
-    merge_rec(array, mid + 1, j, aux);
+    mid = (end - start)/2;
+    merge_rec(array, start, mid, aux);
+    merge_rec(array, mid + 1, end, aux);
+
+
+    // we loop from i to j to fill each element of the final merged array
+    for (k = start; k <= end; k++) {
+        if (pointer_left == mid + 1) {      // left pointer has reached the limit
+            aux[k] = array[pointer_right];
+            pointer_right++;
+        } else if (pointer_right == end + 1) {        // right pointer has reached the limit
+            aux[k] = array[pointer_left];
+            pointer_left++;
+        } else if (array[pointer_left] < array[pointer_right]) {        // pointer left points to smaller element
+            aux[k] = array[pointer_left];
+            pointer_left++;
+        } else {        // pointer right points to smaller element
+            aux[k] = array[pointer_right];
+            pointer_right++;
+        }
+    }
+
+    for (k = start; k <= end; k++) {      // copy the elements from aux[] to a[]
+        array[k] = aux[k];
+    }
 }
 
 void merge_sort(int *array, size_t size)
@@ -26,17 +51,4 @@ void merge_sort(int *array, size_t size)
     j = size;
 
     merge_rec(array, i, j, aux);
-}
-
-
-function merge_sort(i, j, a, aux) {
- mid = (i + j) / 2
- merge_sort(i, mid, a, aux)
- merge_sort(mid + 1, j, a, aux)
- pointer_left = i, pointer_right = mid + 1
- for k in [i ... j] {
- if pointer_left points to smaller element, aux[k] = a[pointer_left] and increment pointer_left by 1
- if pointer_right points to smaller element, aux[k] = a[pointer_right] and increment pointer_right by 1
- }
- copy the contents of aux[i .. j] to a[i .. j]
 }
